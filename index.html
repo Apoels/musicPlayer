@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apoels Personal Player</title>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+<body>
+
+<div id="app" class="app">
+
+	<nav class="appNav">
+		<a href="#library" id="downArrow">
+			<i class="fas fa-chevron-down"></i>
+		</a>
+	</nav>
+
+	<div class="track_banner">
+		<img src="./images/songBanner.jpg" id="thumbnail" />
+	</div>
+	<div class="track_details">
+		<div class="track_creators">
+			<div class="track_artist">Şehinşah</div>
+    		<div class="track_name">Sür ya da öl</div>
+		</div>
+	</div>
+
+	<div class="track_timer">
+		<div class="currentTime"></div>
+			<div class="track_bar">
+				<input type="range" id="progress-bar" min="0" max="" value="0" class="timerBar" onchange="changeProgressBar()" />
+			</div>
+    	<div class="durationTime"></div>
+	</div>
+	<div class="track_actions">
+		<div class="previous">
+			<button>
+				<i id="previous-song" onclick="previousSong()" class="fas fa-chevron-circle-left"></i>
+			</button>
+		</div>
+		<div class="pause">
+    		<button id="pause">
+    			<i id="play-pause" class="fas fa-play-circle" onclick="playPause()"></i>
+    		</button>
+		</div>
+		<div class="next">
+			<button>
+				<i id="next-song" onclick="nextSong()" class="fas fa-chevron-circle-right"></i>
+			</button>
+			<audio src="./songs/song.mp3" id="song"></audio>
+		</div>
+	</div>
+</div>
+<a href="#app" class="showPlayer"></a>
+
+<div id="library" class="library">
+	<div class="libraryNav">
+		<a id="backToApp" href="#app"><i class="fas fa-arrow-left"></i></a>
+		<h5>Tüm Şarkılar</h5>
+	</div>
+	<ul class="libraryHeader">
+		<li>
+			<a href="#">Songs</a>
+		</li>
+		<li>
+			<a href="#">Artist</a>
+		</li>
+		<li>
+			<a href="#">Albums</a>
+		</li>
+		<li>
+			<a href="#">Folders</a>
+		</li>
+	</ul>
+	<div class="songList">
+		
+	</div>
+</div>
+
+	
+	<script src="js/index.js" type="text/javascript"></script>	
+</body>
+</html>
