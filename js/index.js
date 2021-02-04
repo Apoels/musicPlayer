@@ -11,6 +11,10 @@ const track_timer = document.querySelector('.track_timer');
 const library = document.getElementById('library');
 const showPlayerBtn = document.querySelector('.showPlayer');
 const backToApp = document.getElementById('backToApp');
+const songList = document.getElementById('songList');
+
+
+
 
 
 songIndex = 0;
@@ -18,6 +22,17 @@ tracks = ['./songs/song.mp3', './songs/song2.mp3', './songs/song3.m4a', './songs
 track_banners = ['./images/songBanner.jpg', './images/songBanner2.jpg', './images/songBanner3.jpg', './images/songBanner4.jpg', './images/songBanner5.jpg', './images/songBanner6.jpg']; 
 track_artists = ['Şehinşah', 'Sierra Kid', 'Orkun DK', 'Ceg', 'Batuflex', 'Chase Atlantic']; 
 track_names = ["Sür ya da Öl", "Living life, in the night", "Değeri Bilinmemiş Çocuk", "First Class", "Cem Yılmaz", "Swim"]; 
+
+function listSong() {
+    songList.innerHTML = track_artists[songIndex];
+}
+
+listSong();
+
+
+
+
+
 
 let playing = true;
 function playPause() {
@@ -37,11 +52,6 @@ function playPause() {
     }
 };
 
-app.addEventListener('start', function(){
-    track.src = tracks[songIndex[0]];
-});
-
-
 track.addEventListener('ended', function(){
     nextSong();
 });
@@ -53,7 +63,7 @@ function nextSong() {
     };
     track.src = tracks[songIndex];
     track_banner.src = track_banners[songIndex];
-
+    
     track_artist.innerHTML = track_artists[songIndex];
     track_name.innerHTML = track_names[songIndex];
 
@@ -116,7 +126,6 @@ downArrow.addEventListener("click", function(){
         track_timer.style.display="none";
         library.style.display="block";
         showPlayerBtn.style.display="block";
-
     }
     else {
         app.classList.remove('appResized');
